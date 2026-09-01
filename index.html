@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Razor Multiservicios | Tienda &amp; Sala de Videojuegos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="circuit-bg"></div>
+<div class="glow-orb c1"></div>
+<div class="glow-orb c2"></div>
+<div class="glow-orb c3"></div>
+
+<header>
+  <div class="brand">
+    <img src="assets/logo.png" alt="Razor Multiservicios">
+    <div class="brand-text">RAZOR GAMING<span>MULTISERVICIOS</span></div>
+  </div>
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="#horario">Horario</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Tienda &amp; Sala de Videojuegos</div>
+  <img src="assets/logo.png" class="hero-logo" alt="Logo Razor Multiservicios">
+  <h1>RAZOR GAMING</h1>
+  <h2>Multiservicios</h2>
+  <p class="tag">Consolas, accesorios y un espacio gamer listo para retar a tus amigos. Compra, juega y sube de nivel en un solo lugar.</p>
+  <div class="hero-ctas">
+    <a href="#horario" class="btn btn-primary">Ver horario</a>
+    <a href="#contacto" class="btn btn-ghost">Cómo llegar</a>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="sec-head">
+    <div class="kicker">Lo que ofrecemos</div>
+    <h3>Dos formas de vivir el juego</h3>
+    <p>Ven a comprar lo que necesitas o quédate a jugar. Tú decides.</p>
+  </div>
+  <div class="services">
+    <div class="service-card tienda">
+      <div class="service-icon">🛒</div>
+      <h4>Tienda</h4>
+      <ul>
+        <li>Consolas y accesorios</li>
+        <li>Controles y periféricos gamer</li>
+        <li>Recarga de créditos y tarjetas</li>
+        <li>Reparación y mantenimiento</li>
+      </ul>
+    </div>
+    <div class="service-card sala">
+      <div class="service-icon">🎮</div>
+      <h4>Sala de videojuegos</h4>
+      <ul>
+        <li>Estaciones de consolas</li>
+        <li>Torneos y partidas por equipo</li>
+        <li>Renta por hora o por combo</li>
+        <li>Ambiente gamer con buen sonido</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="horario">
+  <div class="sec-head">
+    <div class="kicker">Disponibilidad</div>
+    <h3>Horario de atención</h3>
+  </div>
+  <div class="hours-wrap">
+    <div>
+      <div class="badge-open"><span class="dot"></span> Abierto ahora</div>
+      <p class="hours-note">Ubicados en <strong>Boca Chica, Santo Domingo</strong>. Escríbenos antes de venir si buscas una estación reservada.</p>
+    </div>
+    <div class="hours-list">
+      <div class="hours-row"><span>Lunes – Viernes</span><span>03:00 PM – 10:00 PM</span></div>
+      <div class="hours-row"><span>Sábado</span><span>03:00 PM – 10:00 PM</span></div>
+      <div class="hours-row"><span>Domingo</span><span>08:00 AM – 10:00 PM</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="sec-head">
+    <div class="kicker">Echar un vistazo</div>
+    <h3>Galería</h3>
+    
+  </div>
+  <div class="gallery">
+    <div class="g-item"><img src="assets/galeria-1.jpg" alt="Cliente jugando en la sala de videojuegos"></div>
+    <div class="g-item"><img src="assets/galeria-2.jpg" alt="Entrada de la tienda Razor Multiservicios"></div>
+    <div class="g-item"><img src="assets/galeria-3.jpg" alt="Controles PlayStation en venta en la tienda"></div>
+    <div class="g-item"><img src="assets/galeria-4.jpg" alt="Sala de videojuegos con partida en curso"></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="sec-head">
+    <div class="kicker">Hablemos</div>
+    <h3>Contacto y ubicación</h3>
+  </div>
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div><h5>Dirección</h5><p>Boca Chica, Santo Domingo, RD</p></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📞</div>
+        <div><h5>Teléfono / WhatsApp</h5><p>(829) 279-1746</p></div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">✉️</div>
+        <div><h5>Correo</h5><p>rosariofremeli19@gmail.com</p></div>
+      </div>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+      <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      <p id="form-status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="https://www.instagram.com/eddy_garcia0624?igsi=MWN4cHNudHptc3hmZg%3D%3D&utm_source=qr" aria-label="Instagram">IG</a>
+    <a href="https://www.facebook.com/profile.php?id=61566607379748" aria-label="Facebook">FB</a>
+    <a href="https://www.tiktok.com/@razormultiservicios06?_r=1&_t=ZS-99M1T7jYLjw" aria-label="TikTok">TT</a>
+  </div>
+  <p>© 2026 Razor Multiservicios. Todos los derechos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
