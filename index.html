@@ -4,115 +4,299 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Razor Multiservicios | Tienda &amp; Sala de Videojuegos</title>
+<meta name="description" content="Razor Gaming Multiservicios en Boca Chica, Santo Domingo. Consolas, accesorios gamer, recarga de créditos y sala de videojuegos con torneos.">
+<meta name="theme-color" content="#05070f">
+<meta property="og:title" content="Razor Gaming Multiservicios">
+<meta property="og:description" content="Tienda gamer y sala de videojuegos en Boca Chica, RD.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<div class="hero-video-wrap">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="TU-VIDEO.mp4" type="video/mp4">
-  </video>
-  <div class="hero-video-overlay"></div>
-</div>
-<div class="circuit-bg"></div>
-<div class="glow-orb c1"></div>
-<div class="glow-orb c2"></div>
-<div class="glow-orb c3"></div>
 
-<header>
-  <div class="brand">
+<!-- ══════════════ FONDO ANIMADO ══════════════ -->
+<div class="bg-layer" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-aurora a-cyan"></div>
+  <div class="bg-aurora a-violet"></div>
+  <div class="bg-aurora a-red"></div>
+  <div class="bg-noise"></div>
+  <div class="bg-scanlines"></div>
+</div>
+
+<!-- ══════════════ BARRA DE PROGRESO DE SCROLL ══════════════ -->
+<div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- ══════════════ PANTALLA DE CARGA ══════════════ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <img src="assets/logo.png" alt="" class="loader-logo">
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<!-- ══════════════ ENCABEZADO ══════════════ -->
+<header id="header">
+  <a class="brand" href="#inicio">
     <img src="assets/logo.png" alt="Razor Multiservicios">
-    <div class="brand-text">RAZOR GAMING<span>MULTISERVICIOS</span></div>
-  </div>
-  <nav>
-    <a href="#servicios">Servicios</a>
-    <a href="#horario">Horario</a>
-    <a href="#galeria">Galería</a>
-    <a href="#contacto">Contacto</a>
+    <span class="brand-text">RAZOR GAMING<em>MULTISERVICIOS</em></span>
+  </a>
+
+  <nav id="nav">
+    <a href="#servicios"><span>01</span>Servicios</a>
+    <a href="#horario"><span>02</span>Horario</a>
+    <a href="#galeria"><span>03</span>Galería</a>
+    <a href="#faq"><span>04</span>FAQ</a>
+    <a href="#contacto"><span>05</span>Contacto</a>
+    <a class="btn btn-primary btn-sm nav-cta" href="#contacto">Reservar ahora</a>
   </nav>
-  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 
-<section class="hero">
-  <div class="eyebrow">Tienda &amp; Sala de Videojuegos</div>
-  <img src="assets/logo.png" class="hero-logo" alt="Logo Razor Multiservicios">
-  <h1>RAZOR GAMING</h1>
-  <h2>Multiservicios</h2>
-  <p class="tag">Consolas, accesorios y un espacio gamer listo para retar a tus amigos. Compra, juega y sube de nivel en un solo lugar.</p>
-  <div class="hero-ctas">
-    <a href="#horario" class="btn btn-primary">Ver horario</a>
-    <a href="#contacto" class="btn btn-ghost">Cómo llegar</a>
+<div class="nav-overlay" id="navOverlay" hidden></div>
+
+<main>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+
+    <div class="hero-badge">
+      <span class="live-dot"></span>
+      Boca Chica, RD &nbsp;•&nbsp; Tienda &amp; Sala de Videojuegos
+    </div>
+
+    <div class="logo-stage">
+      <div class="logo-ring r1"></div>
+      <div class="logo-ring r2"></div>
+      <div class="logo-ring r3"></div>
+      <img src="assets/logo.png" class="hero-logo" alt="Logo Razor Multiservicios">
+    </div>
+
+    <h1 class="hero-title glitch" data-text="RAZOR GAMING">RAZOR GAMING</h1>
+    <p class="hero-sub">M U L T I S E R V I C I O S</p>
+
+    <p class="tag">
+      Consolas, accesorios y una sala gamer lista para retar a tus amigos.
+      Compra, juega y sube de nivel en un solo lugar.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#contacto" class="btn btn-primary">
+        <span>Reservar mi estación</span>
+      </a>
+      <a href="#servicios" class="btn btn-ghost">
+        <span>Ver servicios</span>
+      </a>
+    </div>
+
+    <ul class="hero-stats">
+      <li><b class="counter" data-to="4">0</b><span>Años en el barrio</span></li>
+      <li><b class="counter" data-to="12">0</b><span>Consolas en sala</span></li>
+      <li><b class="counter" data-to="500" data-suffix="+">0</b><span>Clientes felices</span></li>
+    </ul>
   </div>
+
+  <a class="scroll-cue" href="#servicios" aria-label="Bajar a servicios">
+    <span class="scroll-cue-line"></span>
+    <span class="scroll-cue-text">SCROLL</span>
+  </a>
 </section>
 
-<section id="servicios">
+<!-- ══════════════ TICKER / MARQUEE ══════════════ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>PLAYSTATION</span><i>◆</i><span>XBOX</span><i>◆</i><span>NINTENDO</span><i>◆</i>
+    <span>CONTROLES</span><i>◆</i><span>PERIFÉRICOS</span><i>◆</i><span>CARGAS</span><i>◆</i>
+    <span>REPARACIONES</span><i>◆</i><span>TORNEOS</span><i>◆</i><span>PARTIDAS</span><i>◆</i>
+    <span>PLAYSTATION</span><i>◆</i><span>XBOX</span><i>◆</i><span>NINTENDO</span><i>◆</i>
+    <span>CONTROLES</span><i>◆</i><span>PERIFÉRICOS</span><i>◆</i><span>CARGAS</span><i>◆</i>
+    <span>REPARACIONES</span><i>◆</i><span>TORNEOS</span><i>◆</i><span>PARTIDAS</span><i>◆</i>
+  </div>
+</div>
+
+<!-- ══════════════ SERVICIOS ══════════════ -->
+<section id="servicios" class="reveal">
   <div class="sec-head">
-    <div class="kicker">Lo que ofrecemos</div>
-    <h3>Dos formas de vivir el juego</h3>
+    <span class="sec-num">01</span>
+    <span class="kicker">Lo que ofrecemos</span>
+    <h2>Dos formas de vivir <em>el juego</em></h2>
     <p>Ven a comprar lo que necesitas o quédate a jugar. Tú decides.</p>
   </div>
-  <div class="services">
-    <div class="service-card tienda">
-      <div class="service-icon">🛒</div>
-      <h4>Tienda</h4>
-      <ul>
+
+  <div class="bento">
+
+    <article class="bento-card bento-lg tienda">
+      <div class="card-glow"></div>
+      <div class="card-top">
+        <div class="service-icon">🛒</div>
+        <span class="card-tag">COMPRA</span>
+      </div>
+      <h3>Tienda</h3>
+      <p class="card-desc">Todo lo que necesitas para tu setup, en el mismo lugar donde vienes a jugar.</p>
+      <ul class="feature-list">
         <li>Consolas y accesorios</li>
         <li>Controles y periféricos gamer</li>
         <li>Recarga de créditos y tarjetas</li>
         <li>Reparación y mantenimiento</li>
       </ul>
-    </div>
-    <div class="service-card sala">
-      <div class="service-icon">🎮</div>
-      <h4>Sala de videojuegos</h4>
-      <ul>
+      <a class="card-link" href="#contacto">Consultar catálogo <span>→</span></a>
+    </article>
+
+    <article class="bento-card bento-lg sala">
+      <div class="card-glow"></div>
+      <div class="card-top">
+        <div class="service-icon">🎮</div>
+        <span class="card-tag">JUEGA</span>
+      </div>
+      <h3>Sala de videojuegos</h3>
+      <p class="card-desc">Estaciones con buena pantalla, buen sonido y el ambiente para competir.</p>
+      <ul class="feature-list">
         <li>Estaciones de consolas</li>
         <li>Torneos y partidas por equipo</li>
         <li>Renta por hora o por combo</li>
         <li>Ambiente gamer con buen sonido</li>
       </ul>
-    </div>
+      <a class="card-link" href="#contacto">Reservar estación <span>→</span></a>
+    </article>
+
+    <article class="bento-card bento-sm mini">
+      <div class="mini-num">01</div>
+      <h4>Recargas</h4>
+      <p>Créditos y tarjetas al instante.</p>
+    </article>
+    <article class="bento-card bento-sm mini">
+      <div class="mini-num">02</div>
+      <h4>Reparaciones</h4>
+      <p>Mantenimiento de consolas y mandos.</p>
+    </article>
+    <article class="bento-card bento-sm mini bento-wide">
+      <div class="mini-num">03</div>
+      <h4>Torneos</h4>
+      <p>Armamoserverias y copas cada semana.</p>
+    </article>
+
   </div>
 </section>
 
-<section id="horario">
+<!-- ══════════════ HORARIO ══════════════ -->
+<section id="horario" class="reveal">
   <div class="sec-head">
-    <div class="kicker">Disponibilidad</div>
-    <h3>Horario de atención</h3>
+    <span class="sec-num">02</span>
+    <span class="kicker">Disponibilidad</span>
+    <h2>Horario de <em>atención</em></h2>
   </div>
+
   <div class="hours-wrap">
-    <div>
-      <div class="badge-open"><span class="dot"></span> Abierto ahora</div>
-      <p class="hours-note">Ubicados en <strong>Boca Chica, Santo Domingo</strong>. Escríbenos antes de venir si buscas una estación reservada.</p>
+    <div class="hours-aside">
+      <div class="badge-open" id="statusBadge">
+        <span class="live-dot"></span>
+        <span id="statusText">Abierto ahora</span>
+      </div>
+      <p class="hours-note">
+        Ubicados en <strong>Boca Chica, Santo Domingo</strong>.
+        Escríbenos antes de venir si buscas una estación reservada.
+      </p>
+      <a class="btn btn-ghost btn-block" href="#contacto" data-wa-prefill="Hola, quiero reservar una estación.">
+        <span>Reservar por WhatsApp</span>
+      </a>
     </div>
-    <div class="hours-list">
-      <div class="hours-row"><span>Lunes – Viernes</span><span>03:00 PM – 10:00 PM</span></div>
-      <div class="hours-row"><span>Sábado</span><span>03:00 PM – 10:00 PM</span></div>
-      <div class="hours-row"><span>Domingo</span><span>08:00 AM – 10:00 PM</span></div>
-    </div>
+
+    <ul class="hours-list">
+      <li><span>Lunes – Viernes</span><b>03:00 PM – 10:00 PM</b></li>
+      <li><span>Sábado</span><b>03:00 PM – 10:00 PM</b></li>
+      <li><span>Domingo</span><b>08:00 AM – 10:00 PM</b></li>
+    </ul>
   </div>
 </section>
 
-<section id="galeria">
+<!-- ══════════════ GALERÍA ══════════════ -->
+<section id="galeria" class="reveal">
   <div class="sec-head">
-    <div class="kicker">Echar un vistazo</div>
-    <h3>Galería</h3>
-    
+    <span class="sec-num">03</span>
+    <span class="kicker">Echar un vistazo</span>
+    <h2>Galería</h2>
+    <p>Toca cualquier foto para verla en grande.</p>
   </div>
+
   <div class="gallery">
-    <div class="g-item"><img src="assets/galeria-1.jpg" alt="Cliente jugando en la sala de videojuegos"></div>
-    <div class="g-item"><img src="assets/galeria-2.jpg" alt="Entrada de la tienda Razor Multiservicios"></div>
-    <div class="g-item"><img src="assets/galeria-3.jpg" alt="Controles PlayStation en venta en la tienda"></div>
-    <div class="g-item"><img src="assets/galeria-4.jpg" alt="Sala de videojuegos con partida en curso"></div>
+    <button class="g-item" data-index="0" aria-label="Ver foto 1 en grande">
+      <img src="assets/galeria-1.jpg" alt="Cliente jugando en la sala de videojuegos" loading="lazy">
+      <span class="g-zoom">Ver</span>
+    </button>
+    <button class="g-item" data-index="1" aria-label="Ver foto 2 en grande">
+      <img src="assets/galeria-2.jpg" alt="Entrada de la tienda Razor Multiservicios" loading="lazy">
+      <span class="g-zoom">Ver</span>
+    </button>
+    <button class="g-item" data-index="2" aria-label="Ver foto 3 en grande">
+      <img src="assets/galeria-3.jpg" alt="Controles PlayStation en venta en la tienda" loading="lazy">
+      <span class="g-zoom">Ver</span>
+    </button>
+    <button class="g-item" data-index="3" aria-label="Ver foto 4 en grande">
+      <img src="assets/galeria-4.jpg" alt="Sala de videojuegos con partida en curso" loading="lazy">
+      <span class="g-zoom">Ver</span>
+    </button>
   </div>
 </section>
 
-<section id="contacto">
+<!-- ══════════════ FAQ ══════════════ -->
+<section id="faq" class="reveal">
   <div class="sec-head">
-    <div class="kicker">Hablemos</div>
-    <h3>Contacto y ubicación</h3>
+    <span class="sec-num">04</span>
+    <span class="kicker">Antes de venir</span>
+    <h2>Preguntas <em>frecuentes</em></h2>
   </div>
+
+  <div class="faq-list">
+    <details class="faq-item" open>
+      <summary>¿Cómo reservo una estación?<span class="faq-ico"></span></summary>
+      <div class="faq-body">
+        <p>Escríbenos por WhatsApp al <strong>(829) 279-1746</strong> con la hora que prefieres y te confirmamos de inmediato. También puedes dejar tu mensaje en el formulario de esta página.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Cuánto cuesta la renta de las consolas?<span class="faq-ico"></span></summary>
+      <div class="faq-body">
+        <p>Trabajamos por hora y por combo. Los precios varían según el tipo de consola y si vienes solo o en grupo — confírmanos por WhatsApp y te damos el precio exacto al momento.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Qué métodos de pago aceptan?<span class="faq-ico"></span></summary>
+      <div class="faq-body">
+        <p>Efectivo en pesos dominicanos y pagos digitales. Para la sala también aceptamos combos por varias horas al cargar con nosotros.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Tienen reparaciones de consolas y controles?<span class="faq-ico"></span></summary>
+      <div class="faq-body">
+        <p>Sí, hacemos mantenimiento y reparación en el lugar. Trae tu equipo y lo revisamos frente a ti para que sepas qué se le va a hacer y cuánto cuesta antes de entregarlo.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Organizan torneos o eventos?<span class="faq-ico"></span></summary>
+      <div class="faq-body">
+        <p>Sí, armamos copas y partidas por equipo. Para grupos grandes o eventos, avísanos con anticipación para reservarte varias estaciones.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ══════════════ CONTACTO ══════════════ -->
+<section id="contacto" class="reveal">
+  <div class="sec-head">
+    <span class="sec-num">05</span>
+    <span class="kicker">Hablemos</span>
+    <h2>Contacto y <em>ubicación</em></h2>
+  </div>
+
   <div class="contact-wrap">
     <div class="contact-info">
       <div class="info-row">
@@ -121,32 +305,74 @@
       </div>
       <div class="info-row">
         <div class="info-icon">📞</div>
-        <div><h5>Teléfono / WhatsApp</h5><p>(829) 279-1746</p></div>
+        <div><h5>Teléfono / WhatsApp</h5><a href="tel:+18292791746">(829) 279-1746</a></div>
       </div>
       <div class="info-row">
         <div class="info-icon">✉️</div>
-        <div><h5>Correo</h5><p>rosariofremeli19@gmail.com</p></div>
+        <div><h5>Correo</h5><a href="mailto:rosariofremeli19@gmail.com">rosariofremeli19@gmail.com</a></div>
+      </div>
+
+      <div class="contact-social">
+        <a href="https://www.instagram.com/eddy_garcia0624?igsi=MWN4cHNudHptc3hmZg%3D%3D&utm_source=qr" target="_blank" rel="noopener">IG</a>
+        <a href="https://www.facebook.com/profile.php?id=61566607379748" target="_blank" rel="noopener">FB</a>
+        <a href="https://www.tiktok.com/@razormultiservicios06?_r=1&_t=ZS-99M1T7jYLjw" target="_blank" rel="noopener">TT</a>
       </div>
     </div>
-    <form class="contact-form" id="contactForm">
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" required>
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-      <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-      <p id="form-status"></p>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <h4>Escríbenos</h4>
+      <div class="field">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+      </div>
+      <div class="field">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Quiero reservar..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">
+        <span>Enviar por WhatsApp</span>
+      </button>
+      <p id="form-status" role="status"></p>
     </form>
   </div>
 </section>
 
+</main>
+
+<!-- ══════════════ FOOTER ══════════════ -->
 <footer>
-  <div class="social">
-    <a href="https://www.instagram.com/eddy_garcia0624?igsi=MWN4cHNudHptc3hmZg%3D%3D&utm_source=qr" aria-label="Instagram">IG</a>
-    <a href="https://www.facebook.com/profile.php?id=61566607379748" aria-label="Facebook">FB</a>
-    <a href="https://www.tiktok.com/@razormultiservicios06?_r=1&_t=ZS-99M1T7jYLjw" aria-label="TikTok">TT</a>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Razor Multiservicios">
+      <p>Consolas, accesorios y sala de videojuegos en Boca Chica, Santo Domingo.</p>
+    </div>
+    <nav class="footer-nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#horario">Horario</a>
+      <a href="#galeria">Galería</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </div>
-  <p>© 2026 Razor Multiservicios. Todos los derechos reservados.</p>
+  <p class="footer-copy">© <span id="year">2026</span> Razor Multiservicios. Todos los derechos reservados.</p>
 </footer>
+
+<!-- ══════════════ LIGHTBOX ══════════════ -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Galería ampliada">
+  <button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Foto anterior">‹</button>
+  <figure class="lb-figure">
+    <img id="lbImg" src="" alt="">
+    <figcaption id="lbCaption"></figcaption>
+  </figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Foto siguiente">›</button>
+</div>
+
+<!-- ══════════════ BOTÓN FLOTANTE WHATSAPP ══════════════ -->
+<a class="wa-float" id="waFloat" href="https://wa.me/18292791746?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.83 3 3 8.83 3 16c0 2.29.6 4.44 1.67 6.33L3 29l6.87-1.62A12.9 12.9 0 0 0 16 29c7.17 0 13-5.83 13-13S23.17 3 16 3zm0 23.6c-1.98 0-3.9-.57-5.55-1.63l-.4-.25-4.08.96.97-3.98-.26-.41A10.6 10.6 0 1 1 16 26.6zm5.85-8.02c-.32-.16-1.9-.94-2.2-1.05-.3-.11-.51-.16-.72.16-.22.32-.83 1.05-1.02 1.27-.19.22-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.19.21-.32.32-.53.11-.22.05-.41-.03-.57-.08-.16-.72-1.74-.99-2.38-.26-.63-.53-.54-.72-.55h-.62c-.22 0-.57.08-.87.4-.3.33-1.14 1.12-1.14 2.73s1.17 3.17 1.33 3.39c.16.22 2.3 3.5 5.56 4.92.78.33 1.39.53 1.86.68.78.25 1.49.21 2.05.13.63-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.14-.3-.22-.62-.38z"/></svg>
+  <span class="wa-label">Escríbenos</span>
+</a>
 
 <script src="script.js"></script>
 </body>
